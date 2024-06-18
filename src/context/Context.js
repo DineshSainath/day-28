@@ -3,19 +3,28 @@ import { createContext, useState } from "react";
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  //dropdownValue, setDropDownValue
-  //func qtyPrice - subtotal
-  //total, setTotal
+  const [cart, setCart] = useState([]);
 
-  const [dropdownValue, setDropDownValue] = useState(0);
-  const [qtyPrice, setQtyPrice] = useState(0);
-  const [total, setTotal] = useState(0);
+  const updateCart = (product, quantity) => {
+    setCart((prevCart) => {
+      const existingProduct = prevCart.find((item) => item.id === product.id);
+      if (existingProduct) {
+        return prevCart.map((item) =>
+          item.id === product.id ? { ...item, quantity } : item
+        );
+      } else {
+        return [...prevCart, { ...product, quantity }];
+      }
+    });
+  };
+
+  const calculateTotal = () => {
+    return cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  };
 
   return (
-    <>
-      <CartContext.Provider value={dropdownValue}>
-        {children}
-      </CartContext.Provider>
-    </>
+    <CartContext.Provider value={{ cart, updateCart, calculateTotal }}>
+      {children}
+    </CartContext.Provider>
   );
 };
