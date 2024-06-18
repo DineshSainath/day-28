@@ -1,6 +1,10 @@
 import React from "react";
+import { useContext } from "react";
+import { CartContext } from "../context/Context";
 
 function Card({ title, brand, desc, price, thumbnail }) {
+  const { dropDownValue } = useContext(CartContext);
+
   return (
     <div className="container">
       <div className="section1">
