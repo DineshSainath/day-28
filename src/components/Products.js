@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import productData from "../product.json";
 import Card from "./Card";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Products() {
   const data = productData.products;
-  console.log(data);
 
   return (
     <div className="products">
-      <ul>
+      <ul className="list-unstyled">
         {data.map((item) => (
           <Card
             key={item.id}
+            id={item.id}
             brand={item.brand}
             desc={item.description}
             title={item.title}

@@ -1,36 +1,73 @@
+.body {
+  background-color: #f6f5f8;
+}
+
 .heading {
   text-align: center;
-}
-
-.products {
-  margin-top: 70px;
-}
-
-.container {
-  display: flex;
-  margin-top: 20px;
-}
-
-.section1 {
-  width: 500px;
-  display: flex;
-  align-items: center;
-}
-
-.img-section {
-  justify-content: center;
-  align-items: center;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #333;
 }
 
 .thumbnail {
+  width: 60%;
+  min-width: 70px;
+  border-radius: 5px;
 }
 
-.desc-section {
-  margin-left: 50px;
+.desc-section h2,
+.desc-section h4 {
+  margin: 0;
+  font-size: 1.2rem;
 }
 
-.section2 {
-  justify-content: center;
-  align-items: center;
-  margin-left: 550px;
+.desc-section h4 {
+  font-weight: 300;
+  color: #666;
+}
+
+.desc-section p {
+  color: #999;
+}
+
+.section2 .price,
+.section2 .subtotal {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.section2 .quantity-input {
+  max-width: 60px;
+  margin-left: 10px;
+}
+
+.total-section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.total-section h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.total-section .list-group-item {
+  border: none;
+  padding: 0.5rem 0;
+}
+
+.total-section .list-group-item .remove {
+  color: red;
+  cursor: pointer;
+}
+
+.total-section h3 {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.total-section .card {
+  border: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
